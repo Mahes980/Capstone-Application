@@ -1,0 +1,1160 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gaming Event Ticketing & Registration</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.7)
+                ),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            padding: 40px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #0ea5e9;
+            color: white;
+
+            border: none;
+            border-radius: 6px;
+
+            padding: 12px 25px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #0284c7;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 60px 30px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* FEATURES */
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: white;
+            width: 250px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #0284c7;
+        }
+
+        /* EVENTS */
+
+        .events {
+            background: #eef6ff;
+        }
+
+        .event-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .event-card {
+            background: white;
+
+            width: 300px;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card h3 {
+            color: #0284c7;
+            margin: 15px 0;
+        }
+
+        .event-card p {
+            margin: 10px 0;
+        }
+
+        .event-icon {
+            height: 120px;
+
+            background: #111827;
+
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 8px;
+
+            font-size: 55px;
+        }
+
+        .event-card .btn {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* REGISTRATION */
+
+        .registration {
+            background: #f4f7fb;
+        }
+
+        .form-box {
+            background: white;
+
+            max-width: 500px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-box label {
+            display: block;
+
+            margin-top: 15px;
+            margin-bottom: 6px;
+
+            font-weight: bold;
+        }
+
+        .form-box input,
+        .form-box select {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+        .form-box .btn {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* BOOKINGS */
+
+        .bookings {
+            background: #eef6ff;
+        }
+
+        #bookingDetails {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .booking-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-card p {
+            margin: 10px 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 5px;
+                display: inline-block;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <h1>🎮 GameZone</h1>
+
+    <nav>
+
+        <a onclick="goHome()">Home</a>
+
+        <a onclick="goEvents()">Events</a>
+
+        <a onclick="goRegister()">Register</a>
+
+        <a onclick="goBookings()">Bookings</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div>
+
+        <h2>
+            Gaming Event Ticketing
+            & Registration Platform
+        </h2>
+
+        <p>
+            Discover gaming tournaments,
+            register online and book your
+            event tickets easily.
+        </p>
+
+        <button
+            class="btn"
+            onclick="goEvents()">
+
+            Explore Events
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section>
+
+    <h2>Platform Features</h2>
+
+    <div class="features">
+
+        <div class="feature-card">
+
+            <h3>🎮 Gaming Events</h3>
+
+            <p>
+                View upcoming gaming
+                tournaments and competitions.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <h3>🎟️ Ticket Booking</h3>
+
+            <p>
+                Book tickets for your
+                favorite gaming events.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <h3>📝 Registration</h3>
+
+            <p>
+                Register participants quickly
+                and easily.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <h3>📋 Booking Management</h3>
+
+            <p>
+                View your event booking
+                information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EVENTS ================= -->
+
+<section id="events" class="events">
+
+    <h2>Upcoming Gaming Events</h2>
+
+    <div class="event-container">
+
+
+        <!-- EVENT 1 -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🎯
+            </div>
+
+            <h3>
+                Valorant Championship
+            </h3>
+
+            <p>
+                <strong>Game:</strong>
+                Valorant
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                15 September 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Chennai
+            </p>
+
+            <p>
+                <strong>Ticket:</strong>
+                ₹499
+            </p>
+
+            <p>
+                <strong>Available:</strong>
+                100
+            </p>
+
+            <button
+                class="btn"
+                onclick="selectEvent(
+                    'Valorant Championship',
+                    499
+                )">
+
+                Register Now
+
+            </button>
+
+        </div>
+
+
+        <!-- EVENT 2 -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🔥
+            </div>
+
+            <h3>
+                PUBG Battle Royale
+            </h3>
+
+            <p>
+                <strong>Game:</strong>
+                PUBG
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                5 October 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Coimbatore
+            </p>
+
+            <p>
+                <strong>Ticket:</strong>
+                ₹399
+            </p>
+
+            <p>
+                <strong>Available:</strong>
+                150
+            </p>
+
+            <button
+                class="btn"
+                onclick="selectEvent(
+                    'PUBG Battle Royale',
+                    399
+                )">
+
+                Register Now
+
+            </button>
+
+        </div>
+
+
+        <!-- EVENT 3 -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🏆
+            </div>
+
+            <h3>
+                Free Fire Tournament
+            </h3>
+
+            <p>
+                <strong>Game:</strong>
+                Free Fire
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                20 November 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Madurai
+            </p>
+
+            <p>
+                <strong>Ticket:</strong>
+                ₹299
+            </p>
+
+            <p>
+                <strong>Available:</strong>
+                200
+            </p>
+
+            <button
+                class="btn"
+                onclick="selectEvent(
+                    'Free Fire Tournament',
+                    299
+                )">
+
+                Register Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTRATION ================= -->
+
+<section id="register" class="registration">
+
+    <h2>
+        Event Registration
+    </h2>
+
+
+    <div class="form-box">
+
+        <form id="registrationForm">
+
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label>
+                Select Event
+            </label>
+
+            <select id="event" required>
+
+                <option value="">
+                    -- Select Event --
+                </option>
+
+                <option value="Valorant Championship">
+                    Valorant Championship
+                </option>
+
+                <option value="PUBG Battle Royale">
+                    PUBG Battle Royale
+                </option>
+
+                <option value="Free Fire Tournament">
+                    Free Fire Tournament
+                </option>
+
+            </select>
+
+
+            <label>
+                Number of Tickets
+            </label>
+
+            <input
+                type="number"
+                id="tickets"
+                min="1"
+                max="10"
+                value="1"
+                required
+            >
+
+
+            <label>
+                Payment Method
+            </label>
+
+            <select id="payment" required>
+
+                <option value="">
+                    -- Select Payment --
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+                <option value="Debit Card">
+                    Debit Card
+                </option>
+
+                <option value="Credit Card">
+                    Credit Card
+                </option>
+
+                <option value="Cash">
+                    Cash
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="btn">
+
+                Register & Book Ticket
+
+            </button>
+
+        </form>
+
+
+        <div id="message"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKINGS ================= -->
+
+<section id="bookings" class="bookings">
+
+    <h2>
+        Booking Details
+    </h2>
+
+    <div id="bookingDetails">
+
+        <div class="booking-card">
+
+            <p>
+                No booking available.
+                Please register for an event.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 GameZone Gaming Events
+    </p>
+
+    <p>
+        Gaming Event Ticketing & Registration Platform
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    let selectedEvent = "";
+    let selectedPrice = 0;
+
+
+    /* NAVIGATION */
+
+    function goHome() {
+
+        document
+            .getElementById("home")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+    function goEvents() {
+
+        document
+            .getElementById("events")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+    function goRegister() {
+
+        document
+            .getElementById("register")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+    function goBookings() {
+
+        document
+            .getElementById("bookings")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+    /* SELECT EVENT */
+
+    function selectEvent(
+        eventName,
+        price
+    ) {
+
+        selectedEvent = eventName;
+
+        selectedPrice = price;
+
+        document.getElementById(
+            "event"
+        ).value = eventName;
+
+        goRegister();
+
+    }
+
+
+    /* REGISTRATION */
+
+    document
+        .getElementById(
+            "registrationForm"
+        )
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "name"
+                    ).value;
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+
+                const phone =
+                    document.getElementById(
+                        "phone"
+                    ).value;
+
+
+                const eventName =
+                    document.getElementById(
+                        "event"
+                    ).value;
+
+
+                const tickets =
+                    Number(
+                        document.getElementById(
+                            "tickets"
+                        ).value
+                    );
+
+
+                const payment =
+                    document.getElementById(
+                        "payment"
+                    ).value;
+
+
+                if (!eventName) {
+
+                    alert(
+                        "Please select an event."
+                    );
+
+                    return;
+
+                }
+
+
+                let price = 0;
+
+
+                if (
+                    eventName ===
+                    "Valorant Championship"
+                ) {
+
+                    price = 499;
+
+                }
+                else if (
+                    eventName ===
+                    "PUBG Battle Royale"
+                ) {
+
+                    price = 399;
+
+                }
+                else if (
+                    eventName ===
+                    "Free Fire Tournament"
+                ) {
+
+                    price = 299;
+
+                }
+
+
+                const total =
+                    price * tickets;
+
+
+                const bookingId =
+                    "GE" +
+                    Math.floor(
+                        100000 +
+                        Math.random() *
+                        900000
+                    );
+
+
+                const booking = {
+
+                    bookingId:
+                        bookingId,
+
+                    name:
+                        name,
+
+                    email:
+                        email,
+
+                    phone:
+                        phone,
+
+                    event:
+                        eventName,
+
+                    tickets:
+                        tickets,
+
+                    price:
+                        price,
+
+                    total:
+                        total,
+
+                    payment:
+                        payment
+
+                };
+
+
+                localStorage.setItem(
+                    "gamingBooking",
+                    JSON.stringify(
+                        booking
+                    )
+                );
+
+
+                document.getElementById(
+                    "message"
+                ).innerHTML = `
+
+                    <p style="color:green;">
+                        ✅ Registration Successful!
+                    </p>
+
+                    <p>
+                        Booking ID:
+                        <strong>
+                            ${bookingId}
+                        </strong>
+                    </p>
+
+                    <p>
+                        Total Amount:
+                        <strong>
+                            ₹${total}
+                        </strong>
+                    </p>
+
+                `;
+
+
+                displayBooking();
+
+
+                document
+                    .getElementById(
+                        "bookings"
+                    )
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+
+            }
+        );
+
+
+    /* DISPLAY BOOKING */
+
+    function displayBooking() {
+
+        const data =
+            localStorage.getItem(
+                "gamingBooking"
+            );
+
+
+        if (!data) {
+
+            return;
+
+        }
+
+
+        const booking =
+            JSON.parse(data);
+
+
+        document.getElementById(
+            "bookingDetails"
+        ).innerHTML = `
+
+            <div class="booking-card">
+
+                <h3>
+                    🎟️ Booking Confirmed
+                </h3>
+
+                <p>
+                    <strong>
+                        Booking ID:
+                    </strong>
+                    ${booking.bookingId}
+                </p>
+
+                <p>
+                    <strong>
+                        Name:
+                    </strong>
+                    ${booking.name}
+                </p>
+
+                <p>
+                    <strong>
+                        Email:
+                    </strong>
+                    ${booking.email}
+                </p>
+
+                <p>
+                    <strong>
+                        Phone:
+                    </strong>
+                    ${booking.phone}
+                </p>
+
+                <p>
+                    <strong>
+                        Event:
+                    </strong>
+                    ${booking.event}
+                </p>
+
+                <p>
+                    <strong>
+                        Number of Tickets:
+                    </strong>
+                    ${booking.tickets}
+                </p>
+
+                <p>
+                    <strong>
+                        Ticket Price:
+                    </strong>
+                    ₹${booking.price}
+                </p>
+
+                <p>
+                    <strong>
+                        Total Amount:
+                    </strong>
+                    ₹${booking.total}
+                </p>
+
+                <p>
+                    <strong>
+                        Payment:
+                    </strong>
+                    ${booking.payment}
+                </p>
+
+                <p style="color:green;">
+                    <strong>
+                        Status: Confirmed
+                    </strong>
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* LOAD OLD BOOKING */
+
+    displayBooking();
+
+</script>
+
+
+</body>
+
+</html>
+```
